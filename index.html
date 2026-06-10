@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 | Agro Forte e Sustentável</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis de Cores e Estilo */
+        :root {
+            --primary-color: #27ae60;
+            --secondary-color: #2ecc71;
+            --dark-bg: #1a4314;
+            --light-bg: #f8fdf8;
+            --accent: #f39c12;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+        }
+
+        /* Navegação Fixa */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Banner Hero Animado */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 67, 20, 0.7), rgba(26, 67, 20, 0.7)), 
+                        url('https://agropecfuturo.com.br/wp-content/uploads/2026/05/agro-forte-futuro-sustentavel-equilibrio-entre-producao-e-meio-ambiente-1-scaled.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            animation: fadeIn 1.5s ease-out;
+            max-width: 800px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #d6b810;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Container Padrão */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--dark-bg);
+            margin-bottom: 60px;
+        }
+
+        /* Layout em Grid Interativo */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--accent);
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-box p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Seção FAQ (Perguntas Frequentes) com JavaScript */
+        .faq-section {
+            background-color: #eaf7ef;
+        }
+
+        .accordion {
+            background-color: white;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: 0.4s;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .active, .accordion:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .panel {
+            padding: 0 20px;
+            background-color: transparent;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            margin-bottom: 15px;
+        }
+
+        .panel p {
+            padding: 15px 0;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Rodapé Elegante */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-links { display: none; /* Esconde menu em telas pequenas para simplificar */ }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Agri<span>nho</span></div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#pilares">Agro Forte</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Agro Forte e Sustentável</h1>
+            <p>Cultivando o conhecimento hoje para colher um futuro onde a tecnologia, a natureza e a educação crescem juntas.</p>
+            <a href="#pilares" class="btn">Explorar o Tema</a>
+        </div>
+    </section>
+
+    <section id="pilares" class="container">
+        <h2 class="section-title">Os 3 Pilares do Futuro</h2>
+        <div class="features">
+            <div class="feature-box">
+                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=200&q=80" alt="Sustentabilidade">
+                <h3>Sustentabilidade</h3>
+                <p>Sustentabilidade é a ideia de produzir alimentos e cuidar do planeta ao mesmo tempo, garantindo que os recursos naturais não acabem para as próximas gerações. No agronegócio, isso significa produzir de forma inteligente. </p>
+            </div>
+            <div class="feature-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQin6tsI5ZTo6FNz35H82XAwCW3f-8nJW8fvQ&s" alt="Tecnologia">
+                <h3>Tecnologia no Campo</h3>
+                <p>O "Toda essa tecnologia serve para o produtor tomar decisões baseadas em dados reais, e não em palpites. Isso aumenta a produtividade, reduz os custos e ajuda a gastar menos recursos naturais.</p>
+            </div>
+            <div class="feature-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpCvKOgmM1uMRzNWr9I1Vl4WDsI27gji8XQ&s" alt="Educação">
+                <h3>Educação (O Agrinho)</h3>
+<p>O objetivo principal é levar informações sobre o agronegócio, a sustentabilidade e a cidadania para dentro das salas de aula, mostrando como o campo e a cidade estão conectados.</p>              
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Entenda o Projeto</h2>
+            
+            <button class="accordion">O que é um Agro "Forte"? <span>+</span></button>
+            <div class="panel">
+                <p>Basicamente, a galera usa essa expressão quando o agronegócio de um país está funcionando no nível máximo. Não é só cuidar de uma fazendinha comum; é uma estrutura gigante que mistura biologia, tecnologia e muita administração.</p>
+            </div>
+
+            <button class="accordion">Por que focar na "Sustentabilidade"? <span>+</span></button>
+            <div class="panel">
+                <p>Porque não há agricultura sem natureza. Sem chuva regular, sem solo fértil e sem polinizadores (como as abelhas), a produção para. A sustentabilidade garante a sobrevivência do próprio negócio agrícola a longo prazo.</p>
+            </div>
+
+            <button class="accordion">Qual o papel do aluno nisso tudo? <span>+</span></button>
+            <div class="panel">
+                <p>Os alunos são os futuros consumidores, cientistas, políticos e agricultores. Ao entenderem a relação entre campo e cidade através do Agrinho (iniciativa do SENAR-PR), eles se tornam cidadãos mais conscientes sobre o desperdício de alimentos e a preservação ambiental.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Projeto Agrinho 2026</h2>
+        <p style="margin-top: 15px;">Desenvolvido com HTML, CSS e JS. Foco em Agro Forte e Sustentável.</p>
+        <p><small>Imagens: Unsplash (Licença Aberta) | Fontes: Google Fonts</small></p>
+    </footer>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                // Alterna a classe 'active' para mudar a cor do botão
+                this.classList.toggle("active");
+                
+                // Muda o sinal de + para -
+                var span = this.querySelector('span');
+                if (this.classList.contains("active")) {
+                    span.textContent = "-";
+                } else {
+                    span.textContent = "+";
+                }
+
+                // Abre ou fecha o painel
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+
+</body>
+</html>

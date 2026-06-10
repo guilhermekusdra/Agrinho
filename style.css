@@ -1,0 +1,232 @@
+<style>
+        /* Reset de estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f9f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho / Navbar */
+        header {
+            background-color: #1b4d3e;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0,1);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #88c057;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #88c057;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            background-color: #88c057;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #6da343;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #1b4d3e;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #88c057;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Sobre o Tema */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre-texto h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .sobre-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Categorias do Concurso */
+        .categorias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid #1b4d3e;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #1b4d3e;
+        }
+
+        /* Cronograma e Inscrições */
+        .info-section {
+            background-color: #e8f5e9;
+        }
+
+        .cronograma-lista {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cronograma-lista li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #c8e6c9;
+            font-size: 18px;
+        }
+
+        .cronograma-lista li strong {
+            color: #1b4d3e;
+        }
+
+        .cta-inscricao {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1b4d3e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
